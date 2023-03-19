@@ -21,9 +21,9 @@ public class TestJBDC {
 
         try {
             Class.forName(driver);
-            System.out.println("Driver loaded");
+            System.out.println("Driver loaded for mysql succefully");
             connection = DriverManager.getConnection(url, login, pass);
-            System.out.println("Database connected");
+            System.out.println("Database connected with Bankkati database");
 
             //Statement
             sc=connection.prepareStatement("select * from Crédit ");
