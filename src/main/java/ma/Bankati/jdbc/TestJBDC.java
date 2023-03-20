@@ -29,6 +29,8 @@ public class TestJBDC {
             sc=connection.prepareStatement("select * from Crédit ");
             resultSet = sc.executeQuery();
             resultMetaDta = resultSet.getMetaData();
+
+            // METHODE 1
             System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
             while (resultSet.next()){
                 for (int i =1;i<=resultMetaDta.getColumnCount();i++)
@@ -38,18 +40,22 @@ public class TestJBDC {
                 System.out.println();
                 System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
 
-
-//                var id = resultSet.getLong("id");
-//                var cp = resultSet.getDouble("capital");
-//                var nbrMois = resultSet.getInt("nbr_mois");
-//                var taux = resultSet.getDouble("taux_mensialité");
-//                var demandeur = resultSet.getString("demandeur");
-//                var mensualité = resultSet.getDouble("mensualité");
-//
-//                Crédit credit = new Crédit(id,cp,nbrMois,taux,demandeur,mensualité);
-//                System.out.println(credit);
-
             }
+            // METHODE 2
+//            while (resultSet.next()){
+//
+//                System.out.println("=========================================================");
+//                System.out.println("                        CREDITs                          ");
+//                System.out.println("=========================================================");
+//                System.out.println("#ID        :   "+ resultSet.getInt("id"));
+//                System.out.println("+OWNER     :   "+ resultSet.getString("Demandeur"));
+//                System.out.println("-AMOUNT    :   "+ resultSet.getDouble("capitale_Emprunté")+ " DHs");
+//                System.out.println("-DURATION  :   "+ resultSet.getInt("nombreDeMois")+" Months");
+//                System.out.println("-RATE      :   "+ resultSet.getDouble("taux_Mensuel")+" %");
+//                System.out.println("-DHs/Month :   "+ resultSet.getDouble("mensualité")+" DHs");
+//                System.out.println("=========================================================");
+//
+//            }
 
 
 
