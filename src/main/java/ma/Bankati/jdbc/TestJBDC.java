@@ -90,6 +90,7 @@ public class TestJBDC {
                 } catch (SQLException e) {
                     System.err.println("Fermeture de sesssion échoué");
                 }
+                Singleton.closeConnection();
             }
 
         }
